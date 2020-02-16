@@ -8,22 +8,6 @@
 #define Q31_1_MIN  (-1<<30)
 #define ONE_SIZE (128)
 
-int32_t Saturation(int64_t R)
-{
-	if (R < (int64_t)Q31_1_MIN)
-		return Q31_1_MIN;
-
-	else if (R > (int64_t)Q31_1_MAX)
-		return Q31_1_MAX;
-
-	return R;
-}
-
-int32_t round_up(int64_t x) {
-
-	return (x + (1LL << 30) >> 30);
-}
-
 int32_t flt2fixd(float x)
 {
 	if (x >= 1)
